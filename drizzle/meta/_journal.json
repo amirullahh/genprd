@@ -43,6 +43,13 @@
       "when": 1791771967635,
       "tag": "0005_abnormal_scrambler",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "6",
+      "when": 1791792223798,
+      "tag": "0006_bright_captain_midlands",
+      "breakpoints": true
     }
   ]
 }

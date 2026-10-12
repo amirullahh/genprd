@@ -59,6 +59,14 @@ export const account = sqliteTable(
   (t) => [index("account_user_idx").on(t.userId)],
 );
 
+export const rateLimit = sqliteTable("rate_limit", {
+  id: text("id").primaryKey(),
+  key: text("key").notNull().unique(),
+  count: integer("count").notNull(),
+  // Plain epoch-ms number (not a Date) — better-auth's rate limiter does raw numeric arithmetic on this field.
+  lastRequest: integer("last_request").notNull(),
+});
+
 export const verification = sqliteTable(
   "verification",
   {
